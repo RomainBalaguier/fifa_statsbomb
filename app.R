@@ -11,8 +11,9 @@ pacman::p_load(ggplot2, tidyverse, dplyr, ggsoccer,tidyr,
                ggiraph,DT,plotly, formattable, ggpubr,
                gridExtra, ggforce, ggimage,magick, soccermatics)
 
-
-
+# chargement des fichiers  -----------------------
+fifa<-load("./FIFA.Rda")
+matches<-load("./FIFA_match.Rda")
 
 # Appel des fonctions  --------------
 # Fonction pour dessiner la cage  ------------------
@@ -252,8 +253,7 @@ server <- function(input, output) {
   
   observeEvent(input$password,{
     
-    fifa<-load("./FIFA.Rda")
-    matches<-load("./FIFA_match.Rda")
+    
     
 # Fonction pour dessiner la cage  ------------------
   function(fill_background = "white"){
